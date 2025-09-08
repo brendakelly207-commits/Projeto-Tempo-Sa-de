@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tempo Saúde</title>
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    /* Estilos base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f8f8;
+      color: #333;
+    }
+
+    header {
+      background-color: midnightblue;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0; /* Elimina a distância extra */
+    }
+
+    /* Menu de navegação */
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: midnightblue;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 20px 50px; /* Tamanho maior do menu */
+      font-size: 1.5rem; /* Fonte maior */
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #f6f6f6;
+    }
+
+    /* Seção principal */
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    main p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    section h2 {
+      color: midnightblue;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    aside {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    aside p {
+      margin-bottom: 10px;
+    }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      background-color: midnightblue;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      nav ul li a {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+      }
+
+      main {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu de navegação -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="unidades.html">Unidades</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+      <li><a href="comentario_usuario.php">Comentar</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1>Bem-vindo ao Tempo Saúde <br> onde quem posta informação são os próprios pacientes!</h1>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <p>O objetivo desta página é oferecer suporte, flexibilidade e agilidade na escolha da melhor unidade de pronto atendimento para se dirigir em situações de emergência. Aqui, você encontrará informações atualizadas sobre o estado de ocupação e relatos claros em tempo real de pessoas que estão sendo atendidas durante o plantão.</p>
+    <p>Este site foi desenvolvido com foco em atender às necessidades de quem busca assistência rápida, com especial atenção a crianças e idosos, que precisam evitar exposição a vírus altamente contagiosos e não podem esperar por longos períodos para serem atendidos. Além disso, buscamos contribuir para a melhor gestão das unidades de saúde, evitando superlotação e incentivando a troca de informações úteis entre os usuários.</p>
+
+    <!-- Instruções -->
+    <section id="como_usar">
+      <h2>Como usar o site</h2>
+      <aside>
+        <p><strong>1.</strong> Para consultar informações durante uma emergência: Clique em "Unidades" e você será redirecionado à página de unidades, ao escolher qual PS, abrirá a página de comentários, onde encontrará informações sobre o respectivo Pronto-Socorro. Pode confiar: todos os comentários antigos são removidos da página a cada 8 horas, garantindo que as informações disponíveis sejam referentes ao plantão atual</p>
+        <p><strong>2.</strong> Para informar a situação da unidade em que você está: Clique em "Cadastro". A página permitirá que você adicione suas informações. Após salvar seus dados, você poderá acessar a página da unidade onde está localizado e registrar sua opinião sobre o estado de ocupação. Escolha entre "Moderado" para uma ocupação dentro dos limites normais de espera ou "Anormal" para indicar superlotação e tempos de espera elevados. Você também poderá incluir uma breve explicação sobre sua escolha de ocupação e relatar sua experiência no atendimento, seja ela positiva ou negativa. Lembre-se de que outras pessoas dependem de sua contribuição, então tenha responsabilidade ao comentar: seja claro, objetivo e respeitoso em suas palavras.</p>
+        <p><span style="color: red;">Importante:</span> Menores de idade não estão autorizados a comentar. Para garantir a organização do sistema, todos os comentários e cadastros possuem prazos de exclusão automática. - Comentários são excluídos após 8 horas. - Cadastros são excluídos automaticamente em 3 dias, permitindo que pacientes se recadastrem corretamente caso se dirijam a outra unidade. - Este site é direcionado somente as unidades da cidade de São José Dos Campos.</p>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Tempo Saúde.</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
