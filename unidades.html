@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tempo Saúde</title>
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    /* Estilos base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f8f8;
+      color: #333;
+    }
+
+    header {
+      background-color: midnightblue;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0; /* Elimina a distância extra */
+    }
+
+    /* Menu de navegação */
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: midnightblue;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 20px 50px; /* Tamanho maior do menu */
+      font-size: 1.5rem; /* Fonte maior */
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #f6f6f6;
+    }
+
+    /* Seção principal */
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    main p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    section h2 {
+      color: midnightblue;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    aside {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    aside p {
+      margin-bottom: 10px;
+    }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      background-color: midnightblue;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      nav ul li a {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+      }
+
+      main {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Menu de navegação -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="unidades.html">Unidades</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Unidades de pronto atendimento</h1>
+  </header>
+
+  <section>
+    <div class="boxing">
+      <div class="box">
+        <h2><strong>Pronto Socorro Municipal</strong></h2>
+        <p><center>Rua Saigiro Nakamura, 800, Vila Industrial</center></p>
+        <a href="comentario.php?id=1"><center>Ver mais</center></a>
+      </div>
+      <div class="box">
+        <h2><strong>Pronto Socorro Parque Industrial</strong></h2>
+        <p><center>Praça Natal, 55</center></p>
+        <a href="comentario.php?id=2"><center>Ver mais</center></a>
+      </div>
+      <div class="box">
+        <h2><strong>UPA Eugênio de Melo</strong></h2>
+        <p><center>Rua Gen. Eugênio Augusto Melo, 101</center></p>
+        <a href="comentario.php?id=3"><center>Ver mais</center></a>
+      </div>
+      <div class="box">
+        <h2><strong>UPA Alto da Ponte</strong></h2>
+        <p><center>Rua Alziro Lebrão, 76</center></p>
+        <a href="comentario.php?id=4"><center>Ver mais</center></a>
+      </div>
+      <div class="box">
+        <h2><strong>UPA Santana</strong></h2>
+        <p><center>Rua Alceu Batista de Nascimento, 355</center></p>
+        <a href="comentario.php?id=5"><center>Ver mais</center></a>
+      </div>
+      <div class="box">
+        <h2><strong>UPA Região do Putim</strong></h2>
+        <p><center>Av. João Rodolfo Castelli, 1035</center></p>
+        <a href="comentario.php?id=6"><center>Ver mais</center></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Tempo Saúde.</p>
+  </footer>
+</body>
+</html>
