@@ -1,0 +1,68 @@
+-- Criação do Banco de Dados
+CREATE DATABASE IF NOT EXISTS tempo_saude;
+USE tempo_saude;
+
+-- Criação da Tabela de Unidades de Saúde
+CREATE TABLE IF NOT EXISTS unidades (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(255) NOT NULL
+);
+
+-- Inserção de Unidades de Saúde
+INSERT INTO unidades (nome, endereco) VALUES
+('Pronto Socorro Municipal', 'Rua Saigiro Nakamura, 800, Vila Industrial'),
+('Pronto Socorro Parque Industrial', 'Praça Natal, 55'),
+('UPA Eugênio de Melo', 'Rua Gen. Eugênio Augusto Melo, 101'),
+('UPA Alto da Ponte', 'Rua Alziro Lebrão, 76'),
+('UPA Santana', 'Rua Alceu Batista de Nascimento, 355'),
+('UPA Região do Putim', 'Av. João Rodolfo Castelli, 1035');
+
+-- Criação da Tabela de Usuários
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    idade INT NOT NULL,
+    unidade_id INT NOT NULL,
+    data_cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    expiracao DATETIME NOT NULL,
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id)
+);
+
+-- Criação da Tabela de Comentários
+CREATE TABLE IF NOT EXISTS comentarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    unidade_id INT NOT NULL,
+    texto TEXT NOT NULL,
+    ocupacao ENUM('Moderado', 'Fora do Normal') DEFAULT 'Moderado',
+    curtidas INT DEFAULT 0,
+    data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(usuario_id, unidade_id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (unidade_id) REFERENCES unidades(id)
+);
+
+-- Evento para Exclusão Automática de Cadastros Após 3 Dias
+CREATE EVENT IF NOT EXISTS remover_usuarios_expirados
+ON SCHEDULE EVERY 1 DAY
+DO
+    DELETE FROM usuarios
+    WHERE expiracao < NOW();
+    
+
+
+-- Evento para Exclusão Automática de Comentários Após 8 Horas
+CREATE EVENT IF NOT EXISTS excluir_comentarios
+ON SCHEDULE EVERY 1 HOUR
+DO
+    DELETE FROM comentarios
+    WHERE TIMESTAMPDIFF(HOUR, data_criacao, NOW()) >= 8;
+
+-- Ativação do Event Scheduler
+SET GLOBAL event_scheduler = ON;
+SHOW VARIABLES LIKE 'event_scheduler';
+
+
+
