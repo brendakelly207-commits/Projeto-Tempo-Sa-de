@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tempo Saúde</title>
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f8f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: midnightblue;
+      text-align: center;
+      padding: 20px;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      background-color: midnightblue;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      padding: 20px 50px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #f6f6f6;
+      color: midnightblue;
+    }
+
+    /* Estilo da caixa de cadastro */
+    .caixa-cadastro {
+      background-color: white;
+      max-width: 400px;
+      margin: auto;
+      margin-top: 40px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .caixa-cadastro h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: midnightblue;
+    }
+
+    .caixa-cadastro input,
+    .caixa-cadastro select {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .caixa-cadastro input[type="submit"] {
+      background-color: midnightblue;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .caixa-cadastro input[type="submit"]:hover {
+      background-color: #f8c9d4;
+      color: midnightblue;
+    }
+
+    footer {
+      text-align: center;
+      background-color: midnightblue;
+      color: white;
+      padding: 10px;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      nav ul li a {
+        padding: 15px 30px;
+        font-size: 1.2rem;
+      }
+
+      .caixa-cadastro {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu de navegação -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="unidades.html">Unidades</a></li>
+      <li><a href="cadastro.html">Cadastro</a></li>
+    
+    </ul>
+  </nav>
+
+  <!-- Cabeçalho -->
+  <header>
+    <h1><strong>Cadastre-se</strong></h1>
+  </header>
+
+  <!-- Formulário Centralizado -->
+  <form class="caixa-cadastro" action="cadastrar.php" method="POST">
+    <h2>Cadastro</h2>
+
+    <input type="text" name="nome" placeholder="Nome completo" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="number" name="idade" placeholder="Idade" min="18" required>
+    
+    <select name="unidade" required>
+      <option value="">Selecione a unidade de saúde</option>
+      <option value="Pronto Scorro Municipal">Pronto Scorro Municipal</option>
+      <option value="Pronto Scorro Parque Industrial">Pronto Scorro Parque Industrial</option>
+      <option value="UPA Eugênio de Melo">UPA Eugênio de Melo</option>
+      <option value="UPA Alto da Ponte">UPA Alto da Ponte</option>
+      <option value="UPA Santana">UPA Santana</option>
+      <option value="UPA Região do Putim">UPA Região do Putim</option>
+    </select>
+
+    <input type="submit" value="Cadastrar">
+  </form>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Tempo Saúde.</p>
+  </footer>
+
+</body>
+</html>
